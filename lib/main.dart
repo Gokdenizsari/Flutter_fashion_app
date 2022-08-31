@@ -278,6 +278,28 @@ class _HomePageState extends State<HomePage> {
                           style:
                               TextStyle(fontFamily: "Montserrat", fontSize: 15),
                         ),
+                         Container(
+                          width: MediaQuery.of(context).size.width - 230,
+                          alignment: Alignment.centerRight,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Icon(
+                                Icons.favorite,
+                                color: Colors.red,
+                                size: 30,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "3.1K",
+                                style: TextStyle(
+                                    fontFamily: "Montserrat", fontSize: 16),
+                              )
+                            ],
+                          ),
+                        ),
                       ],
                     )
                   ],
