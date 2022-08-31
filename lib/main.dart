@@ -87,9 +87,9 @@ class _HomePageState extends State<HomePage> {
             child: Material(
               borderRadius: BorderRadius.circular(16),
               elevation: 4,
-              color: Colors.green.shade300,
+              // color: Colors.green.shade300,
               child: Container(
-                height: 450,
+                height: 500,
                 width: double.infinity,
                 padding: EdgeInsets.all(16.0),
                 child: Column(
@@ -130,6 +130,156 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "This offical website features a ribbed knit zipper jacket that is"
+                      "modern and stylish. It looks very temparament and is recommend to friends",
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontFamily: "Montserrat",
+                          color: Colors.grey),
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          height: 200,
+                          width: (MediaQuery.of(context).size.width - 60) / 2,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              image: DecorationImage(
+                                  image: AssetImage("assets/modelgrid1.jpeg"),
+                                  fit: BoxFit.cover)),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 90,
+                              width:
+                                  (MediaQuery.of(context).size.width - 100) / 2,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  image: DecorationImage(
+                                      image:
+                                          AssetImage("assets/modelgrid2.jpeg"),
+                                      fit: BoxFit.cover)),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Container(
+                              height: 90,
+                              width:
+                                  (MediaQuery.of(context).size.width - 100) / 2,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  image: DecorationImage(
+                                      image:
+                                          AssetImage("assets/modelgrid3.jpeg"),
+                                      fit: BoxFit.cover)),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    // Etiketlerin olduğu Row kısmı!
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          height: 25,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.brown.withOpacity(0.3),
+                          ),
+                          child: Column(
+                            children: [
+                              Center(
+                                child: Text(
+                                  "# Louis Vuitton",
+                                  style: TextStyle(
+                                      fontFamily: "Montserrat",
+                                      fontSize: 10,
+                                      color: Colors.brown),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          height: 25,
+                          width: 75,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.brown.withOpacity(0.2),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "# Chloe",
+                              style: TextStyle(
+                                  fontFamily: "Montserrat",
+                                  fontSize: 10,
+                                  color: Colors.brown),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    //
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Divider(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.reply,
+                          color: Colors.brown.withOpacity(0.3),
+                          size: 25,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          "1.9k",
+                          style:
+                              TextStyle(fontFamily: "Montserrat", fontSize: 16),
+                        ),
+                        SizedBox(
+                          width: 16,
+                        ),
+                        Icon(
+                          Icons.comment,
+                          color: Colors.brown.withOpacity(0.3),
+                          size: 25,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          "320",
+                          style:
+                              TextStyle(fontFamily: "Montserrat", fontSize: 15),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -188,7 +338,7 @@ class _HomePageState extends State<HomePage> {
           Icons.more_vert,
           color: Colors.grey,
           size: 16,
-        )
+        ),
       ],
     );
   }
