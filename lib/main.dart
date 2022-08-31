@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         padding: EdgeInsets.only(top: 5),
         children: [
+          // İlk yaptığımız en üst tarafta bulunun profil listesi burada!
           Container(
             //color: Colors.purple.shade400,
             height: 150,
@@ -80,7 +81,60 @@ class _HomePageState extends State<HomePage> {
                 listElement("assets/model3.jpeg", "assets/chloelogo.png"),
               ],
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Material(
+              borderRadius: BorderRadius.circular(16),
+              elevation: 4,
+              color: Colors.green.shade300,
+              child: Container(
+                height: 450,
+                width: double.infinity,
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                  image: AssetImage("assets/model1.jpeg"),
+                                  fit: BoxFit.cover)),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width - 160,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Daisy",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontFamily: "Montserrat",
+                                      fontWeight: FontWeight.bold)),
+                              Text(
+                                "47 mins ago",
+                                style: TextStyle(
+                                  fontSize: 8,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -130,6 +184,11 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+        Icon(
+          Icons.more_vert,
+          color: Colors.grey,
+          size: 16,
+        )
       ],
     );
   }
