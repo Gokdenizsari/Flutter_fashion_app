@@ -50,14 +50,34 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.only(top: 5),
         children: [
           Container(
-            color: Colors.purple.shade400,
+            //color: Colors.purple.shade400,
             height: 150,
             width: double.infinity,
             child: ListView(
               padding: EdgeInsets.all(10),
               scrollDirection: Axis.horizontal,
               children: [
-                listElement("assets/model1.jpeg", "assets/channellogo.jpg")
+                listElement("assets/model1.jpeg", "assets/chanellogo.jpg"),
+                SizedBox(
+                  width: 30,
+                ),
+                listElement("assets/model2.jpeg", "assets/louisvuitton.jpg"),
+                SizedBox(
+                  width: 30,
+                ),
+                listElement("assets/model3.jpeg", "assets/chloelogo.png"),
+                SizedBox(
+                  width: 30,
+                ),
+                listElement("assets/model1.jpeg", "assets/chanellogo.jpg"),
+                SizedBox(
+                  width: 30,
+                ),
+                listElement("assets/model2.jpeg", "assets/louisvuitton.jpg"),
+                SizedBox(
+                  width: 30,
+                ),
+                listElement("assets/model3.jpeg", "assets/chloelogo.png"),
               ],
             ),
           )
@@ -72,14 +92,43 @@ class _HomePageState extends State<HomePage> {
         Stack(
           children: [
             Container(
-              height: 80,
-              width: 80,
+              height: 75,
+              width: 75,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(35),
                   image: DecorationImage(
                       image: AssetImage(imagePath), fit: BoxFit.cover)),
+            ),
+            Positioned(
+              top: 50,
+              left: 50,
+              child: Container(
+                width: 25,
+                height: 25,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                      image: AssetImage(logoPath), fit: BoxFit.cover),
+                ),
+              ),
             )
           ],
+        ),
+        SizedBox(
+          height: 11,
+        ),
+        Container(
+          height: 25,
+          width: 75,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15), color: Colors.brown),
+          child: Center(
+            child: Text(
+              "Follow",
+              style: TextStyle(
+                  fontFamily: "Montserrat", fontSize: 12, color: Colors.white),
+            ),
+          ),
         ),
       ],
     );
