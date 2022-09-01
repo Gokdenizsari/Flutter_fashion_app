@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_moda_app/detail.dart';
 
 void main() {
   runApp(const FashionApp());
@@ -27,21 +28,21 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    TabController tabController;
+    /* TabController tabController;
     @override
     void initState() {
       super.initState();
       tabController = TabController(length: 4, vsync: this);
-    }
+    }*/
 
-    @override
+    /* @override
     void dispose() {
       tabController.dispose();
       super.dispose();
-    }
+    }*/
 
     return Scaffold(
-      bottomNavigationBar: Material(
+      /*bottomNavigationBar: Material(
           color: Colors.white,
           child: TabBar(controller: tabController, tabs: [
             Tab(
@@ -53,7 +54,7 @@ class _HomePageState extends State<HomePage>
             ),
             Tab(
               icon: Icon(
-                Icons.supervised_user_circle
+                Icons.supervised_user_circle,
                 color: Colors.grey,
                 size: 14,
               ),
@@ -72,7 +73,7 @@ class _HomePageState extends State<HomePage>
                 size: 14,
               ),
             ),
-          ])),
+          ])),*/
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -142,36 +143,46 @@ class _HomePageState extends State<HomePage>
                   children: [
                     Row(
                       children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  image: AssetImage("assets/model1.jpeg"),
-                                  fit: BoxFit.cover)),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    Detail(imgPath: "assets/model1.jpeg")));
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: AssetImage("assets/model1.jpeg"),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                         SizedBox(
                           width: 10,
                         ),
-                        Container(
-                          width: MediaQuery.of(context).size.width - 160,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Daisy",
+                        Hero(
+                          tag: "assets/model1.jpeg",
+                          child: Container(
+                            width: MediaQuery.of(context).size.width - 160,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Daisy",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontFamily: "Montserrat",
+                                        fontWeight: FontWeight.bold)),
+                                Text(
+                                  "47 mins ago",
                                   style: TextStyle(
-                                      fontSize: 15,
-                                      fontFamily: "Montserrat",
-                                      fontWeight: FontWeight.bold)),
-                              Text(
-                                "47 mins ago",
-                                style: TextStyle(
-                                  fontSize: 8,
-                                  color: Colors.grey,
+                                    fontSize: 8,
+                                    color: Colors.grey,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -192,14 +203,26 @@ class _HomePageState extends State<HomePage>
                     ),
                     Row(
                       children: [
-                        Container(
-                          height: 200,
-                          width: (MediaQuery.of(context).size.width - 60) / 2,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(
-                                  image: AssetImage("assets/modelgrid1.jpeg"),
-                                  fit: BoxFit.cover)),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    Detail(imgPath: "assets/modelgrid1.jpeg")));
+                          },
+                          child: Hero(
+                            tag: "assets/modelgrid1.jpeg",
+                            child: Container(
+                              height: 200,
+                              width:
+                                  (MediaQuery.of(context).size.width - 60) / 2,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  image: DecorationImage(
+                                      image:
+                                          AssetImage("assets/modelgrid1.jpeg"),
+                                      fit: BoxFit.cover)),
+                            ),
+                          ),
                         ),
                         SizedBox(
                           width: 10,
@@ -207,30 +230,52 @@ class _HomePageState extends State<HomePage>
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Container(
-                              height: 90,
-                              width:
-                                  (MediaQuery.of(context).size.width - 100) / 2,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  image: DecorationImage(
-                                      image:
-                                          AssetImage("assets/modelgrid2.jpeg"),
-                                      fit: BoxFit.cover)),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => Detail(
+                                        imgPath: "assets/modelgrid2.jpeg")));
+                              },
+                              child: Hero(
+                                tag: "assets/modelgrid2.jpeg",
+                                child: Container(
+                                  height: 90,
+                                  width: (MediaQuery.of(context).size.width -
+                                          100) /
+                                      2,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/modelgrid2.jpeg"),
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
                             ),
                             SizedBox(
                               width: 10,
                             ),
-                            Container(
-                              height: 90,
-                              width:
-                                  (MediaQuery.of(context).size.width - 100) / 2,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  image: DecorationImage(
-                                      image:
-                                          AssetImage("assets/modelgrid3.jpeg"),
-                                      fit: BoxFit.cover)),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => Detail(
+                                        imgPath: "assets/modelgrid3.jpeg")));
+                              },
+                              child: Hero(
+                                tag: "assets/modelgrid3.jpeg",
+                                child: Container(
+                                  height: 90,
+                                  width: (MediaQuery.of(context).size.width -
+                                          100) /
+                                      2,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/modelgrid3.jpeg"),
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
                             ),
                           ],
                         ),
