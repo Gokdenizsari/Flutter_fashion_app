@@ -101,7 +101,7 @@ class _DetailState extends State<Detail> {
                       padding:
                           const EdgeInsets.only(left: 15, top: 11, bottom: 3),
                       child: Row(
-                        mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "\$6500",
@@ -117,7 +117,7 @@ class _DetailState extends State<Detail> {
                               child: Center(child: Icon(Icons.arrow_back)),
                               backgroundColor: Colors.brown,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     )
@@ -126,6 +126,28 @@ class _DetailState extends State<Detail> {
               ),
             ),
           ),
+          Positioned(
+            child: Container(
+              height: 40,
+              width: 130,
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.3),
+                borderRadius: BorderRadius.circular(9),
+              ),
+              child: Center(
+                child: Text(
+                  "LAMİNATED",
+                  style: TextStyle(
+                      fontFamily: "Montserrat",
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+                
+              ),
+            ),
+            top: MediaQuery.of(context).size.height / 2,
+            left: 50,
+          )
         ],
       ),
     );
